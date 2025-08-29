@@ -5,7 +5,7 @@ on:
       - "main"
       - "develop"
       - "feature/**"
-      - "feat/**"
+      #- "feat/**"
       - "release/**"
       - "releases/**"
     paths-ignore:
