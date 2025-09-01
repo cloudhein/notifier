@@ -7,7 +7,7 @@ on:
 # Both workflows should have the same concurrency group
 concurrency:
   group: notifier-ci-${{ github.event.pull_request.number }}
-  cancel-in-progress: true  # Automatically cancel queued workflows
+  cancel-in-progress: false
 
 jobs:
   build:
