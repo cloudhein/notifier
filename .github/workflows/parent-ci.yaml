@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   notifier-service-ci:
-    uses: cloudhein/workflows/.github/workflows/common-jobs.yaml@69fd4d876565d31d6f210426bde68feedf36d0d5
+    uses: cloudhein/workflows/.github/workflows/common-jobs.yaml@012a2b715ba5111dc74bda914344247a40d52eeb
     with:
       working-directory: 'cmd/api'
       go-version: ">=1.22"
@@ -24,11 +24,13 @@ jobs:
   notifier-deploy-service:
     if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.base_ref == 'main')
     needs: notifier-service-ci
-    uses: cloudhein/workflows/.github/workflows/deploy-jobs.yaml@bd81baeea9abdc00bdac1b3cd5ce92d126833809
+    uses: cloudhein/workflows/.github/workflows/deploy-jobs.yaml@012a2b715ba5111dc74bda914344247a40d52eeb
     with:
       service-name: 'notifier'
       dockerhub-username: ${{ vars.DOCKERHUB_USERNAME }}
       manifest-file: 'notifier.yaml'
+      repository: 'cloudhein/flextrack-microservices'
+      directory: 'flextrack-eks-cluster-eso'
     secrets:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
