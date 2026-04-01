@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   notifier-service-ci:
-    uses: cloudhein/workflows/.github/workflows/common-jobs.yaml@0b57b9e2c300e9f738246ec1198df9df93ada059
+    uses: cloudhein/workflows/.github/workflows/common-jobs.yaml@87209d4836301115ead06edd2d41a39a68a61f79
     with:
       working-directory: 'cmd/api'
       go-version: ">=1.22"
@@ -24,7 +24,7 @@ jobs:
   notifier-deploy-service:
     if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.base_ref == 'main')
     needs: notifier-service-ci
-    uses: cloudhein/workflows/.github/workflows/deploy-jobs.yaml@0b57b9e2c300e9f738246ec1198df9df93ada059
+    uses: cloudhein/workflows/.github/workflows/deploy-jobs.yaml@87209d4836301115ead06edd2d41a39a68a61f79
     with:
       service-name: 'notifier'
       dockerhub-username: ${{ vars.DOCKERHUB_USERNAME }}
