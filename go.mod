@@ -1,6 +1,6 @@
 module harry2an.com/notifier
 
-go 1.22.6
+go 1.25
 
 require (
 	github.com/IBM/sarama v1.43.3
@@ -51,5 +51,5 @@ require (
 	github.com/redis/go-redis/v9 v9.6.1
 	golang.org/x/crypto v0.31.0 // indirect
 	golang.org/x/net v0.28.0 // indirect
-	google.golang.org/grpc v1.65.0
+	google.golang.org/grpc v1.79.3
 )
