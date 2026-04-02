@@ -2,7 +2,7 @@ name: Service CI pipeline
 on:
   push:
     branches:
-      - "main"
+      #- "main"
       - "develop"
       - "feature/**"
       #- "feat/**"
