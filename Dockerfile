@@ -1,4 +1,7 @@
-FROM golang:1.22-alpine AS builder
+# FROM golang:1.22-alpine AS builder   
+# Fix vulnerable (stdlib CVE-2025-68121)
+
+FROM golang:1.25-alpine AS builder 
 
 LABEL maintainer="harryd.io@proton.me"
 

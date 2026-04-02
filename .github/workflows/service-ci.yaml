@@ -2,10 +2,10 @@ name: Service CI pipeline
 on:
   push:
     branches:
-      - "main"
+      #- "main"
       - "develop"
       - "feature/**"
-      - "feat/**"
+      #- "feat/**"
       - "release/**"
       - "releases/**"
     paths-ignore:
